@@ -19,18 +19,19 @@
       --purple-light: #7070F2;
       --purple-lighter: #B7B7F3;
       --purple-dark: #3535A7;
-      --purple-darker: #23234D;
 
-      --black-darker: #161616;
-      --black-dark: #242425;
-      --black-default: #2F2F31;
-      --black-light: #3C3C3E;
+      --bg: #191919;
+      --bg-raised: #242425;
+      --bg-subtle: #2F2F31;
 
-      --gray-darker: #39393A;
-      --gray-dark: #808085;
-      --gray-default: #98989B;
-      --gray-light: #CBCBCD;
-      --gray-lighter: #FAFAFA;
+      --border: #333334;
+
+      --text-primary: #F8F4F1;
+      --text-secondary: #A8A5A1;
+      --text-muted: #716F6C;
+
+      --cream: #E8E3DD;
+      --blue-footer: #3451B2;
 
       --radius-m: 8px;
       --radius-l: 12px;
@@ -40,23 +41,23 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--black-darker);
-      color: var(--gray-lighter);
+      background: var(--bg);
+      color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: var(--purple-light);
+      color: var(--text-secondary);
       text-decoration: none;
       transition: color 150ms;
     }
-    a:hover { color: var(--purple-lighter); }
+    a:hover { color: var(--text-primary); }
 
     /* Header */
     header {
       padding: 24px 40px;
-      border-bottom: 1px solid var(--gray-darker);
+      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -64,88 +65,93 @@
     }
 
     .header-logo {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--gray-lighter);
+      color: var(--text-primary);
       white-space: nowrap;
     }
 
     .header-logo span {
-      color: var(--gray-dark);
+      color: var(--text-muted);
       font-weight: 400;
     }
 
     .header-links {
       display: flex;
-      gap: 20px;
+      gap: 24px;
     }
 
     .header-links a {
       font-size: 13px;
-      color: var(--gray-default);
+      color: var(--text-muted);
       font-weight: 500;
+      transition: color 150ms;
     }
-    .header-links a:hover { color: var(--gray-lighter); }
+    .header-links a:hover { color: var(--text-primary); }
 
     /* Layout */
     .layout {
       display: grid;
       grid-template-columns: 1fr 380px;
-      min-height: calc(100vh - 70px);
+      min-height: calc(100vh - 69px);
     }
 
     /* Content */
     .content {
-      border-right: 1px solid var(--gray-darker);
-      overflow-y: auto;
+      border-right: 1px solid var(--border);
     }
 
     .content-block {
-      padding: 48px 40px;
+      padding: 56px 48px;
     }
 
     .content-block + .content-block {
-      border-top: 1px solid var(--gray-darker);
+      border-top: 1px solid var(--border);
     }
 
     .content h1 {
-      font-size: clamp(40px, 5vw, 60px);
+      font-size: clamp(40px, 5vw, 64px);
       font-weight: 700;
-      line-height: 1.1;
+      line-height: 1.08;
       letter-spacing: -0.03em;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      color: var(--text-primary);
     }
 
     .content h1 .accent { color: var(--purple); }
 
     .content p {
       font-size: 16px;
-      color: var(--gray-default);
+      color: var(--text-secondary);
       line-height: 1.8;
-      max-width: 600px;
+      max-width: 580px;
     }
 
-    .content p + p { margin-top: 12px; }
+    .content p + p { margin-top: 14px; }
 
     .content p a {
+      color: var(--text-primary);
       text-decoration: underline;
-      text-underline-offset: 2px;
+      text-decoration-color: var(--text-muted);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 150ms;
     }
+    .content p a:hover { text-decoration-color: var(--text-primary); }
 
     /* Details row */
     .details {
       display: flex;
-      gap: 32px;
-      margin-top: 28px;
+      gap: 40px;
+      margin-top: 32px;
       flex-wrap: wrap;
     }
 
     .detail {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
     }
 
     .detail-label {
@@ -153,12 +159,12 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gray-dark);
+      color: var(--text-muted);
     }
 
     .detail-value {
       font-size: 15px;
-      color: var(--gray-lighter);
+      color: var(--text-primary);
       font-weight: 500;
     }
 
@@ -168,14 +174,8 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gray-dark);
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
 
     /* CTA link */
@@ -183,7 +183,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 16px;
+      margin-top: 20px;
       font-size: 14px;
       font-weight: 600;
       color: var(--purple-light);
@@ -199,7 +199,7 @@
     .sidebar {
       position: sticky;
       top: 0;
-      height: calc(100vh - 70px);
+      height: calc(100vh - 69px);
       overflow: hidden;
     }
 
@@ -211,20 +211,27 @@
 
     /* Footer */
     footer {
-      padding: 20px 40px;
-      border-top: 1px solid var(--gray-darker);
-      font-size: 13px;
-      color: var(--gray-dark);
+      background: var(--purple);
+      padding: 32px 48px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    footer a { color: var(--gray-default); font-size: 13px; }
+    footer span {
+      font-size: 13px;
+      color: rgba(248, 244, 241, 0.7);
+    }
+
+    footer a {
+      color: rgba(248, 244, 241, 0.9);
+      font-size: 13px;
+    }
+    footer a:hover { color: var(--text-primary); }
 
     .footer-links {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       list-style: none;
     }
 
@@ -237,18 +244,18 @@
       .sidebar {
         position: relative;
         height: 600px;
-        border-top: 1px solid var(--gray-darker);
+        border-top: 1px solid var(--border);
       }
     }
 
     @media (max-width: 600px) {
       header { padding: 16px 20px; }
       .content-block { padding: 32px 20px; }
-      .details { gap: 20px; }
+      .details { gap: 24px; }
       footer {
-        padding: 16px 20px;
+        padding: 24px 20px;
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
         text-align: center;
       }
     }
@@ -268,7 +275,6 @@
   <div class="layout">
     <main class="content">
 
-      <!-- What & when -->
       <div class="content-block">
         <h1>Make things <span class="accent">real.</span></h1>
         <p>Vizcom Studio is a makerspace in San Francisco where designers, engineers, and curious people come to build. We host weekly open studio nights, maker workshops, and events around physical product design &mdash; powered by <a href="https://vizcom.com" target="_blank" rel="noopener">Vizcom</a>, an AI tool that turns sketches into photorealistic renders in seconds.</p>
@@ -290,10 +296,9 @@
         </div>
       </div>
 
-      <!-- Showroom -->
       <div class="content-block">
         <div class="section-label">Showroom</div>
-        <p>We host a rotating display of work by independent designers, artists, and early-stage hardware founders &mdash; each piece rendered using Vizcom before the first prototype was ever cut. Every slot links out to the creator's site.</p>
+        <p>A rotating display of work by independent designers, artists, and early-stage hardware founders &mdash; each piece rendered using Vizcom before the first prototype was ever cut. Every slot links out to the creator's site.</p>
         <a href="mailto:amy.zhou@vizcom.com" class="cta-link">Submit your work</a>
       </div>
 
@@ -310,10 +315,11 @@
   </div>
 
   <footer>
-    <span>Vizcom Studio &middot; San Francisco &middot; Thursdays 5&ndash;8pm &middot; <a href="mailto:amy.zhou@vizcom.com">amy.zhou@vizcom.com</a></span>
+    <span>Vizcom Studio &middot; San Francisco &middot; Thursdays 5&ndash;8 pm</span>
     <ul class="footer-links">
       <li><a href="https://lu.ma/vizcom" target="_blank" rel="noopener">Luma</a></li>
       <li><a href="https://vizcom.com" target="_blank" rel="noopener">Vizcom</a></li>
+      <li><a href="mailto:amy.zhou@vizcom.com">Contact</a></li>
     </ul>
   </footer>
 
