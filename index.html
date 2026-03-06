@@ -6,7 +6,7 @@
   <title>Vizcom Studio — San Francisco</title>
   <meta name="description" content="A makerspace in San Francisco for designers, engineers, and curious people. Weekly open studio, maker workshops, and design events. Free to attend.">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
     *, *::before, *::after {
       margin: 0;
@@ -122,6 +122,11 @@
 
     .content h1 .accent { color: var(--purple); }
 
+    .content h1 em {
+      font-style: italic;
+      font-weight: 700;
+    }
+
     .content p {
       font-size: 16px;
       color: var(--text-secondary);
@@ -235,23 +240,63 @@
       list-style: none;
     }
 
-    /* Mobile */
+    /* Tablet */
     @media (max-width: 900px) {
       .layout {
         grid-template-columns: 1fr;
       }
 
+      .content {
+        border-right: none;
+      }
+
       .sidebar {
         position: relative;
-        height: 600px;
+        height: 500px;
         border-top: 1px solid var(--border);
       }
     }
 
+    /* Mobile */
     @media (max-width: 600px) {
-      header { padding: 16px 20px; }
-      .content-block { padding: 32px 20px; }
-      .details { gap: 24px; }
+      header {
+        padding: 16px 20px;
+        gap: 16px;
+      }
+
+      .header-links {
+        gap: 16px;
+      }
+
+      .header-links a {
+        font-size: 12px;
+      }
+
+      .content-block {
+        padding: 32px 20px;
+      }
+
+      .content h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .content p {
+        font-size: 15px;
+      }
+
+      .details {
+        gap: 20px;
+      }
+
+      .detail-value {
+        font-size: 14px;
+      }
+
+      .sidebar {
+        height: 450px;
+      }
+
       footer {
         padding: 24px 20px;
         flex-direction: column;
@@ -276,30 +321,30 @@
     <main class="content">
 
       <div class="content-block">
-        <h1>Make things <span class="accent">real.</span></h1>
-        <p>Vizcom Studio is a makerspace in San Francisco where designers, engineers, and curious people come to build. We host weekly open studio nights, maker workshops, and events around physical product design &mdash; powered by <a href="https://vizcom.com" target="_blank" rel="noopener">Vizcom</a>, an AI tool that turns sketches into photorealistic renders in seconds.</p>
-        <p>Open studio is drop-in, no RSVP needed. Official events are on the calendar &mdash; RSVP on Luma to save your spot.</p>
+        <h1><em>Make things</em> <span class="accent">real.</span></h1>
+        <p>vizcom studio is a makerspace in san francisco where designers, engineers, and curious people come to build. we host weekly open studio nights, maker workshops, and events around physical product design, all powered by <a href="https://vizcom.com" target="_blank" rel="noopener">Vizcom</a>. it turns sketches into <em>photorealistic renders</em> in seconds.</p>
+        <p>open studio is drop-in, no RSVP needed. official events are on the calendar. RSVP on luma to save your spot.</p>
 
         <div class="details">
           <div class="detail">
             <span class="detail-label">Open Studio</span>
-            <span class="detail-value">Every Thursday, 5&ndash;8 pm</span>
+            <span class="detail-value">every thursday, 5&ndash;8 pm</span>
           </div>
           <div class="detail">
             <span class="detail-label">Where</span>
-            <span class="detail-value">San Francisco</span>
+            <span class="detail-value">san francisco</span>
           </div>
           <div class="detail">
             <span class="detail-label">Cost</span>
-            <span class="detail-value">Free</span>
+            <span class="detail-value">free</span>
           </div>
         </div>
       </div>
 
       <div class="content-block">
         <div class="section-label">Showroom</div>
-        <p>A rotating display of work by independent designers, artists, and early-stage hardware founders &mdash; each piece rendered using Vizcom before the first prototype was ever cut. Every slot links out to the creator's site.</p>
-        <a href="mailto:amy.zhou@vizcom.com" class="cta-link">Submit your work</a>
+        <p>a rotating display of work by independent designers, artists, and early-stage hardware founders. each piece rendered using Vizcom before the first prototype was ever cut. every slot links out to the creator's site.</p>
+        <a href="mailto:amy.zhou@vizcom.com" class="cta-link">submit your work</a>
       </div>
 
     </main>
@@ -315,11 +360,11 @@
   </div>
 
   <footer>
-    <span>Vizcom Studio &middot; San Francisco &middot; Thursdays 5&ndash;8 pm</span>
+    <span>vizcom studio &middot; san francisco &middot; thursdays 5&ndash;8 pm</span>
     <ul class="footer-links">
-      <li><a href="https://lu.ma/vizcom" target="_blank" rel="noopener">Luma</a></li>
-      <li><a href="https://vizcom.com" target="_blank" rel="noopener">Vizcom</a></li>
-      <li><a href="mailto:amy.zhou@vizcom.com">Contact</a></li>
+      <li><a href="https://lu.ma/vizcom" target="_blank" rel="noopener">luma</a></li>
+      <li><a href="https://vizcom.com" target="_blank" rel="noopener">vizcom</a></li>
+      <li><a href="mailto:amy.zhou@vizcom.com">contact</a></li>
     </ul>
   </footer>
 
